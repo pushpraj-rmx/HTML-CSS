@@ -1,5 +1,34 @@
 .row {
-    max-width: 111rem;
+    max-width: $grid-width;
     background-color: #eee;
     margin: 0 auto;
+
+    &:not(:last-child) {
+        margin-bottom: $gutter-vertical;
+    }
+
+    .col-1-of-3 {
+        width: calc((100% - #{$gutter-horizontal})/2);
+        background-color: orangered;
+
+        &:not(:last-child) {
+            margin-right: $gutter-horizontal;
+        }
+    }
+
+    // selects all classes who start with "col-"    
+    [class^="col-"] {
+        color: red;
+    }
+
+    // selects all classes who end with "col-"
+    [class$="col-"] {
+        color: red;
+    }
+
+    // selects all classes who contains  "col-" anywhere
+    [class*="col-"] {
+        color: red;
+    }
+
 }
